@@ -7,7 +7,7 @@ local mason_lspconfig = require('mason-lspconfig')
 -- Setup Mason
 mason.setup()
 mason_lspconfig.setup({
-    ensure_installed = { 'pyright', 'tsserver', 'lua_ls', 'clangd', 'rust_analyzer' }, -- Add the servers you need
+    ensure_installed = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer' }, -- Add the servers you need
 })
 
 -- Setup completion
@@ -66,7 +66,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-local servers = { 'pyright', 'tsserver', 'lua_ls', 'clangd', 'rust_analyzer' }
+local servers = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,

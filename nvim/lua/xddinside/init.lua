@@ -1,6 +1,7 @@
 require("xddinside.remap")
 require("xddinside.set")
 require("xddinside.lsp-config")
+require("xddinside.packer")
 
 -- Specify the Python 3 interpreter path
 vim.g.python3_host_prog = '/usr/bin/python3'

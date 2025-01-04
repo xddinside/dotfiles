@@ -13,13 +13,21 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use({
-		'catppuccin/nvim',
-		as = 'catppuccin',
-		config = function()
-			vim.cmd('colorscheme catppuccin-mocha')
-		end
-	})
+    use {
+      'rose-pine/neovim',
+      as = 'rose-pine',
+      config = function()
+        vim.cmd('colorscheme rose-pine')  -- Set the colorscheme to rose-pine
+      end
+    }
+
+--	use({
+--		'catppuccin/nvim',
+--		as = 'catppuccin',
+--		config = function()
+--			vim.cmd('colorscheme catppuccin-mocha') -- Set the colorscheme to catppuccin
+--		end
+--	})
 
     -- Smart-open for better telescope results
     use {
@@ -56,4 +64,4 @@ return require('packer').startup(function(use)
     -- Optional UI improvements
     use 'glepnir/lspsaga.nvim' -- LSP UIs
     use 'onsails/lspkind-nvim' -- Adds vscode-like pictograms to neovim built-in lsp
-end)     
+end)
