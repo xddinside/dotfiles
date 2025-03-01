@@ -1,0 +1,24 @@
+no. of #'s == priority
+
+### setup neovim for markdown
+## add a plugin to compile and run code from neovim (overseer.nvim : add support for c, ts and js)
+## setup lualine (cosmetic status bar)
+# setup doing.nvim (can integrate in lualine statusline)
+# try mini.nvim for project-explorer, and keep neo-tree for navigating directories
+
+
+
+
+
+
+
+
+
+
+
+
+Completed :
+
+## add bufferline for the tabs of files and buffers
+## neo-tree for file explorer
+### project-explorer for navigating projects using mini.files (replacing tmux for neovide)

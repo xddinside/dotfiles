@@ -7,7 +7,7 @@ local mason_lspconfig = require('mason-lspconfig')
 -- Setup Mason
 mason.setup()
 mason_lspconfig.setup({
-    ensure_installed = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer' }, -- Add the servers you need
+    ensure_installed = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer', 'jdtls' }, -- Add the servers you need
 })
 
 -- Setup completion
@@ -31,6 +31,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
+            cmp
         }),
     },
     sources = {
@@ -52,7 +53,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<C-S-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<space>wa', '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<space>wr', '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<space>wl', '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -68,13 +69,41 @@ end
 
 local servers = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
+    --skipping jdtls here, as it requires different setup
+    if lsp == "jdtls" then
+        goto continue
+    end
+
     lspconfig[lsp].setup {
         on_attach = on_attach,
         flags = {
             debounce_text_changes = 150,
         }
     }
+
+    ::continue::
 end
+
+-- separate config for jdtls
+
+local home = os.getenv("HOME")
+local workspace_dir = home .. "/.cache/jdtls/workspace/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
+lspconfig.jdtls.setup {
+    cmd = { "jdtls", "-data", workspace_dir },
+    root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build", ".git"),
+    on_attach = on_attach,
+    settings = {
+        java = {
+            format = {
+                enabled = true,
+            },
+            signatureHelp = { enabled = true },
+            contentProvider = { preferred = "fernflower" }, -- Decompiler
+        }
+    }
+}
+
 
 --Undefined Global Vim
 lspconfig.lua_ls.setup {

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?/init.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1731601260/lib/lua/5.1/?.so"
+local package_path_str = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-cmdline"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
@@ -99,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["image.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/image.nvim",
+    url = "https://github.com/3rd/image.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -109,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -118,6 +133,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -134,6 +159,17 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["overseer.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0" },
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -149,6 +185,19 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["project-explorer.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/project-explorer.nvim",
+    url = "https://github.com/Rics-Dev/project-explorer.nvim"
+  },
+  ["render-markdown.nvim"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/opt/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+  },
   ["rose-pine"] = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
     loaded = true,
@@ -160,6 +209,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/smart-open.nvim",
     url = "https://github.com/danielfalk/smart-open.nvim"
+  },
+  ["snacks.nvim"] = {
+    config = { "\27LJ\2\nƒ\3\0\0\a\0\18\2'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\17\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\0035\4\b\0005\5\t\0006\6\n\0009\6\v\0069\6\f\6\b\6\0\0X\6\4€)\6<\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\r\0056\6\n\0009\6\v\0069\6\f\6\b\6\1\0X\6\4€)\6\30\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\14\5=\5\15\4=\4\16\3=\3\16\2B\0\2\1K\0\1\0\1\0\1\nimage\0\nimage\bdoc\15max_height\14max_width\16neovim_mode\6g\bvim\1\0\4\14max_width\0\15max_height\0\vinline\1\nfloat\2\1\0\2\fenabled\2\bdoc\0\vstyles\1\0\2\nimage\0\vstyles\0\17snacks_image\1\0\1\17snacks_image\0\1\0\2\bcol\3ÿÿÿÿ\15\rrelative\veditor\nsetup\vsnacks\frequire(\20\0" },
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/snacks.nvim",
+    url = "https://github.com/folke/snacks.nvim"
   },
   ["sqlite.lua"] = {
     loaded = true,
@@ -198,10 +253,27 @@ time([[Defining packer_plugins]], false)
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: overseer.nvim
+time([[Config for overseer.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0", "config", "overseer.nvim")
+time([[Config for overseer.nvim]], false)
+-- Config for: snacks.nvim
+time([[Config for snacks.nvim]], true)
+try_loadstring("\27LJ\2\nƒ\3\0\0\a\0\18\2'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\17\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\0035\4\b\0005\5\t\0006\6\n\0009\6\v\0069\6\f\6\b\6\0\0X\6\4€)\6<\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\r\0056\6\n\0009\6\v\0069\6\f\6\b\6\1\0X\6\4€)\6\30\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\14\5=\5\15\4=\4\16\3=\3\16\2B\0\2\1K\0\1\0\1\0\1\nimage\0\nimage\bdoc\15max_height\14max_width\16neovim_mode\6g\bvim\1\0\4\14max_width\0\15max_height\0\vinline\1\nfloat\2\1\0\2\fenabled\2\bdoc\0\vstyles\1\0\2\nimage\0\vstyles\0\17snacks_image\1\0\1\17snacks_image\0\1\0\2\bcol\3ÿÿÿÿ\15\rrelative\veditor\nsetup\vsnacks\frequire(\20\0", "config", "snacks.nvim")
+time([[Config for snacks.nvim]], false)
 -- Config for: smart-open.nvim
 time([[Config for smart-open.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\15smart_open\19load_extension\14telescope\frequire\0", "config", "smart-open.nvim")
 time([[Config for smart-open.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd render-markdown.nvim ]]
+
+-- Config for: render-markdown.nvim
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0", "config", "render-markdown.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
