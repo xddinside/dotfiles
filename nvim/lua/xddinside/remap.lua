@@ -23,8 +23,8 @@ vim.keymap.set("n", "<leader>t", function()
     vim.cmd("w") -- Save the file
     local ts_file = vim.fn.expand("%") -- Get the current file (e.g., src/index.ts)
     local filename = vim.fn.expand("%:t:r") -- Get filename without extension (e.g., 'index' from 'index.ts')
-    vim.cmd("!tsc") -- Compile and run
-    vim.cmd("!node dist/" .. filename .. ".js") -- Run the compiled JS file
+    vim.cmd("!tsc && node dist/" .. filename .. ".js") -- Compile and run
+    -- vim.cmd("!node dist/" .. filename .. ".js") -- Run the compiled JS file
 end, { desc = "Compile and run TypeScript", silent = true })
 
 

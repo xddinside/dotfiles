@@ -8,7 +8,6 @@
 
 - [ ] 4. setup doing.nvim (can integrate in lualine statusline)
 
-- [ ] 5. try mini.nvim for project-explorer, and keep neo-tree for navigating directories
 
 
 
@@ -26,3 +25,4 @@
 - [x] add bufferline for the tabs of files and buffers
 - [x] neo-tree for file explorer
 - [x] project-explorer for navigating projects using mini.files (replacing tmux for neovide)
+- [x] try mini.nvim for project-explorer, and keep neo-tree for navigating directories

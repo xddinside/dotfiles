@@ -1,13 +1,23 @@
 -- Import the required modules
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
+local capabilities = require('cmp_nvim_lsp').default_capabilities() -- Extend capabilities for nvim-cmp
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 
 -- Setup Mason
 mason.setup()
 mason_lspconfig.setup({
-    ensure_installed = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer', 'jdtls' }, -- Add the servers you need
+    ensure_installed = { 'pyright',
+    'ts_ls',
+    'lua_ls',
+    'clangd',
+    'rust_analyzer',
+    'jdtls',
+    'gopls',
+    'html',
+    'cssls'
+}, -- Add the servers you need
 })
 
 -- Setup completion
@@ -67,7 +77,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-local servers = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer' }
+local servers = { 'pyright', 'ts_ls', 'lua_ls', 'clangd', 'rust_analyzer', 'gopls', 'html', 'cssls' }
 for _, lsp in ipairs(servers) do
     --skipping jdtls here, as it requires different setup
     if lsp == "jdtls" then
@@ -76,6 +86,7 @@ for _, lsp in ipairs(servers) do
 
     lspconfig[lsp].setup {
         on_attach = on_attach,
+        capabilities = capabilities,
         flags = {
             debounce_text_changes = 150,
         }
@@ -130,3 +141,25 @@ lspconfig.lua_ls.setup {
         },
     },
 }
+
+lspconfig.gopls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    settings = {
+        gopls = {
+            completeUnimported = true,    -- Auto-complete unimported packages
+            usePlaceholders = true,       -- Better signature help
+            gofumpt = true,               -- Stricter code formatting
+            hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                constantValues = true,
+                functionTypeParameters = true
+            }
+        }
+    }
+})
+

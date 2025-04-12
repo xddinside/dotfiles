@@ -5,7 +5,8 @@ if is_neovide then
         paths = {
             "~/dev/",
             "~/dotfiles/",
-            "~/notes/"
+            "~/notes/",
+            "~/notes/life/"
         }, -- Custom path set by user
         newProjectPath = "~/dev/", -- Custom path for new projects
         file_explorer = function(dir) -- Custom file explorer

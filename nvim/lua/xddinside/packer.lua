@@ -122,6 +122,39 @@ return require('packer').startup(function(use)
         end
     }
 
+    use {
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup({
+                opts = {
+                    -- your configuration here
+                    enable_close = true,
+                    enable_rename = true,
+                    enable_close_on_slash = false,
+                    per_filetype = {
+                        html = {
+                            enable_close = true,
+                        }
+                    },
+                    aliases = {
+                        -- ["your language here"] = "html",
+                    }
+                }
+            })
+        end
+    }
+
+    use ({
+        'm4xshen/autoclose.nvim',
+        config = function ()
+            require("autoclose").setup({
+                options={
+                    disable_when_touch = true,
+                }
+            })
+        end
+    }) -- Autocomplete brackets
+
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
