@@ -56,7 +56,6 @@ return require('packer').startup(function(use)
     use {
         "danielfalk/smart-open.nvim",
         branch = "0.2.x",
-
         config = function()
             require"telescope".load_extension("smart_open")
         end,
@@ -100,7 +99,25 @@ return require('packer').startup(function(use)
     })
 
     use {
-        'windwp/nvim-ts-autotag'
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup({
+                opts = {
+                    -- your configuration here
+                    enable_close = true,
+                    enable_rename = true,
+                    enable_close_on_slash = false,
+                    per_filetype = {
+                        html = {
+                            enable_close = true,
+                        }
+                    },
+                    aliases = {
+                        -- ["your language here"] = "html",
+                    }
+                }
+            })
+        end
     }
 
     use ({
