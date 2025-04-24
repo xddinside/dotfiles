@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["autoclose.nvim"] = {
-    config = { "\27LJ\2\nn\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\1\0\1\23disable_when_touch\2\nsetup\14autoclose\frequire\0" },
+    config = { "\27LJ\2\n¯\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disabled_filetypes\0\23disable_when_touch\2\nsetup\14autoclose\frequire\0" },
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
@@ -125,6 +125,12 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
+  ["lualine.nvim"] = {
+    config = { "\27LJ\2\n–\t\0\0\6\0'\0=6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\15\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0004\5\0\0=\5\t\0044\5\0\0=\5\n\4=\4\v\0034\4\0\0=\4\f\0035\4\r\0=\4\14\3=\3\16\0025\3\18\0005\4\17\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4\19\0034\4\0\0=\4\21\0035\4 \0=\4\23\0035\4!\0=\4\25\0034\4\0\0=\4\27\0034\4\0\0=\4\29\3=\3\"\0024\3\0\0=\3#\0024\3\0\0=\3\n\0024\3\0\0=\3$\0024\3\0\0=\3%\0025\3&\0=\3\v\2B\0\2\1K\0\1\0\1\2\0\0\20NeoTreeFileName\15extensions\20inactive_winbar\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\6\14lualine_z\0\14lualine_y\0\14lualine_x\0\14lualine_c\0\14lualine_b\0\14lualine_a\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\6\14lualine_z\0\14lualine_y\0\14lualine_x\0\14lualine_c\0\14lualine_b\0\14lualine_a\0\1\2\0\0\tmode\foptions\1\0\b\22inactive_sections\0\ftabline\0\rsections\0\foptions\0\15extensions\0\23disabled_filetypes\0\vwinbar\0\20inactive_winbar\0\frefresh\1\0\3\ftabline\3d\vwinbar\3d\15statusline\3d\17ignore_focus\23disabled_filetypes\vwinbar\15statusline\1\0\2\vwinbar\0\15statusline\0\23section_separators\1\0\2\tleft\bî‚°\nright\bî‚²\25component_separators\1\0\2\tleft\bî‚±\nright\bî‚³\1\0\n\23disabled_filetypes\0\ntheme\tauto\23section_separators\0\25component_separators\0\18icons_enabled\2\frefresh\0\17globalstatus\1\24always_show_tabline\2\25always_divide_middle\2\17ignore_focus\0\nsetup\flualine\frequire\0" },
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -166,14 +172,15 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
-    config = { "\27LJ\2\nñ\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\5\0005\5\4\0=\5\6\4=\4\a\0034\4\0\0=\4\b\3=\3\n\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\faliases\17per_filetype\thtml\1\0\1\thtml\0\1\0\1\17enable_close\2\1\0\5\17per_filetype\0\26enable_close_on_slash\1\18enable_rename\2\17enable_close\2\faliases\0\nsetup\20nvim-ts-autotag\frequire\0" },
+    config = { "\27LJ\2\nñ\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\5\0005\5\4\0=\5\6\4=\4\a\0034\4\0\0=\4\b\3=\3\n\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\faliases\17per_filetype\thtml\1\0\1\thtml\0\1\0\1\17enable_close\2\1\0\5\26enable_close_on_slash\1\18enable_rename\2\17enable_close\2\faliases\0\17per_filetype\0\nsetup\20nvim-ts-autotag\frequire\0" },
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["overseer.nvim"] = {
@@ -222,12 +229,6 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/smart-open.nvim",
     url = "https://github.com/danielfalk/smart-open.nvim"
   },
-  ["snacks.nvim"] = {
-    config = { "\27LJ\2\nƒ\3\0\0\a\0\18\2'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\17\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\0035\4\b\0005\5\t\0006\6\n\0009\6\v\0069\6\f\6\b\6\0\0X\6\4€)\6<\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\r\0056\6\n\0009\6\v\0069\6\f\6\b\6\1\0X\6\4€)\6\30\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\14\5=\5\15\4=\4\16\3=\3\16\2B\0\2\1K\0\1\0\1\0\1\nimage\0\nimage\bdoc\15max_height\14max_width\16neovim_mode\6g\bvim\1\0\4\nfloat\2\vinline\1\14max_width\0\15max_height\0\1\0\2\fenabled\2\bdoc\0\vstyles\1\0\2\vstyles\0\nimage\0\17snacks_image\1\0\1\17snacks_image\0\1\0\2\bcol\3ÿÿÿÿ\15\rrelative\veditor\nsetup\vsnacks\frequire(\20\0" },
-    loaded = true,
-    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/snacks.nvim",
-    url = "https://github.com/folke/snacks.nvim"
-  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/sqlite.lua",
@@ -261,6 +262,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: autoclose.nvim
+time([[Config for autoclose.nvim]], true)
+try_loadstring("\27LJ\2\n¯\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disabled_filetypes\0\23disable_when_touch\2\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
+time([[Config for autoclose.nvim]], false)
 -- Config for: overseer.nvim
 time([[Config for overseer.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0", "config", "overseer.nvim")
@@ -271,16 +276,12 @@ try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0
 time([[Config for smart-open.nvim]], false)
 -- Config for: nvim-ts-autotag
 time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\nñ\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\5\0005\5\4\0=\5\6\4=\4\a\0034\4\0\0=\4\b\3=\3\n\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\faliases\17per_filetype\thtml\1\0\1\thtml\0\1\0\1\17enable_close\2\1\0\5\17per_filetype\0\26enable_close_on_slash\1\18enable_rename\2\17enable_close\2\faliases\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+try_loadstring("\27LJ\2\nñ\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\5\0005\5\4\0=\5\6\4=\4\a\0034\4\0\0=\4\b\3=\3\n\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\faliases\17per_filetype\thtml\1\0\1\thtml\0\1\0\1\17enable_close\2\1\0\5\26enable_close_on_slash\1\18enable_rename\2\17enable_close\2\faliases\0\17per_filetype\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
 time([[Config for nvim-ts-autotag]], false)
--- Config for: snacks.nvim
-time([[Config for snacks.nvim]], true)
-try_loadstring("\27LJ\2\nƒ\3\0\0\a\0\18\2'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\17\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\0035\4\b\0005\5\t\0006\6\n\0009\6\v\0069\6\f\6\b\6\0\0X\6\4€)\6<\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\r\0056\6\n\0009\6\v\0069\6\f\6\b\6\1\0X\6\4€)\6\30\0X\a\3€+\6\1\0X\a\1€+\6\2\0=\6\14\5=\5\15\4=\4\16\3=\3\16\2B\0\2\1K\0\1\0\1\0\1\nimage\0\nimage\bdoc\15max_height\14max_width\16neovim_mode\6g\bvim\1\0\4\nfloat\2\vinline\1\14max_width\0\15max_height\0\1\0\2\fenabled\2\bdoc\0\vstyles\1\0\2\vstyles\0\nimage\0\17snacks_image\1\0\1\17snacks_image\0\1\0\2\bcol\3ÿÿÿÿ\15\rrelative\veditor\nsetup\vsnacks\frequire(\20\0", "config", "snacks.nvim")
-time([[Config for snacks.nvim]], false)
--- Config for: autoclose.nvim
-time([[Config for autoclose.nvim]], true)
-try_loadstring("\27LJ\2\nn\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\1\0\1\23disable_when_touch\2\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
-time([[Config for autoclose.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n–\t\0\0\6\0'\0=6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\15\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0004\5\0\0=\5\t\0044\5\0\0=\5\n\4=\4\v\0034\4\0\0=\4\f\0035\4\r\0=\4\14\3=\3\16\0025\3\18\0005\4\17\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4\19\0034\4\0\0=\4\21\0035\4 \0=\4\23\0035\4!\0=\4\25\0034\4\0\0=\4\27\0034\4\0\0=\4\29\3=\3\"\0024\3\0\0=\3#\0024\3\0\0=\3\n\0024\3\0\0=\3$\0024\3\0\0=\3%\0025\3&\0=\3\v\2B\0\2\1K\0\1\0\1\2\0\0\20NeoTreeFileName\15extensions\20inactive_winbar\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\6\14lualine_z\0\14lualine_y\0\14lualine_x\0\14lualine_c\0\14lualine_b\0\14lualine_a\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\6\14lualine_z\0\14lualine_y\0\14lualine_x\0\14lualine_c\0\14lualine_b\0\14lualine_a\0\1\2\0\0\tmode\foptions\1\0\b\22inactive_sections\0\ftabline\0\rsections\0\foptions\0\15extensions\0\23disabled_filetypes\0\vwinbar\0\20inactive_winbar\0\frefresh\1\0\3\ftabline\3d\vwinbar\3d\15statusline\3d\17ignore_focus\23disabled_filetypes\vwinbar\15statusline\1\0\2\vwinbar\0\15statusline\0\23section_separators\1\0\2\tleft\bî‚°\nright\bî‚²\25component_separators\1\0\2\tleft\bî‚±\nright\bî‚³\1\0\n\23disabled_filetypes\0\ntheme\tauto\23section_separators\0\25component_separators\0\18icons_enabled\2\frefresh\0\17globalstatus\1\24always_show_tabline\2\25always_divide_middle\2\17ignore_focus\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
