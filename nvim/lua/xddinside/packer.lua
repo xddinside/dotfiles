@@ -14,12 +14,25 @@ return require('packer').startup(function(use)
 	}
 
     use {
-      'rose-pine/neovim',
-      as = 'rose-pine',
-      config = function()
-        vim.cmd('colorscheme rose-pine')  -- Set the colorscheme to rose-pine
-      end
+        'sainnhe/sonokai',
+        priority = 1000,
+        as = 'sonokai',
+        config = function()
+            vim.g.sonokai_transparent_background = "1"
+            vim.g.sonokai_enable_italic = "1"
+            vim.g.sonaki_style = "andromeda"
+            vim.cmd('colorscheme sonokai')
+            vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+            vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
+        end,
     }
+    -- use {
+    --   'rose-pine/neovim',
+    --   as = 'rose-pine',
+    --   config = function()
+    --     vim.cmd('colorscheme rose-pine')  -- Set the colorscheme to rose-pine
+    --   end
+    -- }
 
 --	use({
 --		'catppuccin/nvim',
@@ -38,7 +51,7 @@ return require('packer').startup(function(use)
         'rcarriga/nvim-notify',
         config = function ()
          require("notify").setup({
-            timeout = 1000,
+            timeout = 2000,
             stages = 'static'
           })
         end,
@@ -77,11 +90,6 @@ return require('packer').startup(function(use)
     })
 
     use {
-      'stevearc/overseer.nvim',
-      config = function() require('overseer').setup() end
-    }
-
-    use {
       "Rics-Dev/project-explorer.nvim",
       requires = {
         "nvim-telescope/telescope.nvim", -- This is the dependency
@@ -115,6 +123,14 @@ return require('packer').startup(function(use)
         end
     }) -- Autocomplete brackets
 
+    use {
+        "smjonas/inc-rename.nvim",
+        config = function()
+            require("inc_rename").setup()
+        end,
+    }
+
+
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -131,6 +147,8 @@ return require('packer').startup(function(use)
 	use('ThePrimeagen/vim-be-good')
 	use('mattn/emmet-vim')
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {"Hashino/doing.nvim"}
+    use { 'nvim-tree/nvim-web-devicons' }
 
     -- LSP and dependencies
     use('neovim/nvim-lspconfig') -- Collection of configurations for built-in LSP client

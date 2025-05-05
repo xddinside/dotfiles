@@ -2,8 +2,7 @@ local is_neovide = vim.g.neovide or false
 
 if is_neovide then
 
-    vim.g.neovide_opacity = 0.9
-    vim.g.transparency = 1
+    vim.g.neovide_opacity = 0.7
     vim.g.neovide_normal_opacity = 1
 
     vim.g.neovide_scroll_animation_length = 0.1
@@ -14,10 +13,10 @@ if is_neovide then
     vim.g.neovide_floating_blur_amount_y = 5.0
     vim.g.neovide_floating_blur_amount_x = 5.0
 
-    vim.g.neovide_padding_top = 20
+    vim.g.neovide_padding_top = 0
     vim.g.neovide_padding_bottom = 0
-    vim.g.neovide_padding_right = 20
-    vim.g.neovide_padding_left = 20
+    vim.g.neovide_padding_right = 0
+    vim.g.neovide_padding_left = 0
 
     vim.g.neovide_hide_mouse_when_typing = true
 

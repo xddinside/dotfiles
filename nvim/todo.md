@@ -1,12 +1,14 @@
 ## Todo List (dev workflow)
 
-- [ ] 1. setup neovim for markdown
+- [x] 1. setup neovim for markdown
 
-- [ ] 2. add a plugin to compile and run code from neovim (overseer.nvim : add support for c, ts and js)
+- [-] 2. add a plugin to compile and run code from neovim (overseer.nvim : add support for c, ts and js)
 
-- [ ] 3. setup lualine (cosmetic status bar)
+- [x] 3. setup lualine (cosmetic status bar)
 
-- [ ] 4. setup doing.nvim (can integrate in lualine statusline)
+- [x] 4. setup doing.nvim (can integrate in lualine statusline)
+
+- [ ] 5. setup alpha.nvim for neovim splash screen with ascii art
 
 
 

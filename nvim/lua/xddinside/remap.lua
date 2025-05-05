@@ -1,7 +1,13 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set('n', '<leader>pf', ':Telescope smart_open<CR>', { silent = true })
+vim.keymap.set('n', '<leader>pt', ':Telescope smart_open<CR>', { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>n", ":Neotree toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>rn", ":IncRename ")
+-- noice: to move to the message, press <C-w>w : jump to notification popup, builtin neovim
+
+-- stop saving to neovim clipboard with x and s (used to cut a char)
+vim.keymap.set({"n", "x"}, "x", '"_x', {silent = true})
+vim.keymap.set({"n", "x"}, "s", '"_s', {silent = true})
 
 vim.keymap.set('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
 
@@ -15,6 +21,15 @@ vim.keymap.set("n", "N", "Nzzz")
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- Useful keymaps for sourcing, quitting and writing the file
+vim.keymap.set("n", "<leader>s", ":source<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>Q", ":qa<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+
+-- exit out of insert mode with jj
+vim.keymap.set("i", "jj", "")
 
 -- save and run js/ts code
 vim.api.nvim_set_keymap('n', '<leader>r', ':w<CR>:!node %<CR>', { noremap = true, silent = true })

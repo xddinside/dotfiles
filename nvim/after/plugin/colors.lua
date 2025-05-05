@@ -2,7 +2,7 @@ local is_neovide = vim.g.neovide or false
 if is_neovide == false then
     function ColorMyPencils(color)
         -- color = color or "catppuccin-mocha"
-        color = color or "rose-pine"
+        color = color or "sonokai"
         vim.cmd.colorscheme(color)
 
         vim.api.nvim_set_hl(0, "Normal",{ bg = "none"})
