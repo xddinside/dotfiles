@@ -20,14 +20,14 @@ vim.keymap.set("n", "<leader>zz", function()
 end)
 
 -- Start zenmode on startup if not in neovide
-if is_neovide == false then
-    vim.api.nvim_create_autocmd("VimEnter", {
-      callback = function()
-        require("zen-mode").toggle()
-        vim.wo.wrap = false
-        if vim.g.neovide == false then
-            ColorMyPencils()
-        end
-      end,
-    })
-end
+-- if is_neovide == false then
+--     vim.api.nvim_create_autocmd("VimEnter", {
+--       callback = function()
+--         require("zen-mode").toggle()
+--         vim.wo.wrap = false
+--         if vim.g.neovide == false then
+--             ColorMyPencils()
+--         end
+--       end,
+--     })
+-- end
