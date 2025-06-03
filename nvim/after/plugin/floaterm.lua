@@ -1,0 +1,76 @@
+vim.keymap.set("n", "<leader>ft", ":FloatermToggle<CR>")
+vim.keymap.set('t', '<C-Space>', [[<C-\><C-n>:FloatermToggle<CR>]], { noremap = true, silent = true })
+
+local function toggle_named_floaterm(name, cmd, opts)
+  opts = opts or {}
+  local width  = opts.width  or 0.8
+  local height = opts.height or 0.8
+
+  -- Check if the terminal exists
+  local term_exists = vim.fn["floaterm#terminal#get_bufnr"](name) ~= -1
+
+  if term_exists then
+    vim.cmd("FloatermToggle " .. name)
+  else
+    -- Set custom size for this terminal
+    vim.g.floaterm_width  = width
+    vim.g.floaterm_height = height
+
+    -- Launch with name and optional command
+    local command = "FloatermNew --name=" .. name
+    if cmd then
+      command = command .. " " .. cmd
+    end
+    vim.cmd(command)
+
+    -- Reset to default size for other terminals
+    vim.g.floaterm_width  = 0.6
+    vim.g.floaterm_height = 0.6
+  end
+end
+
+-- Big terminal (term1)
+vim.keymap.set('n', '<leader>f1', function()
+  toggle_named_floaterm("term1", nil, { width = 0.6, height = 0.6 })
+end, { noremap = true, silent = true })
+
+-- Regular terminal (term2)
+vim.keymap.set('n', '<leader>f2', function()
+  toggle_named_floaterm("term2", nil, { width = 0.95, height = 0.95 })
+end, { noremap = true, silent = true })
+
+-- Big terminal for lazygit (term3)
+vim.keymap.set('n', '<leader>f3', function()
+  toggle_named_floaterm("term3", "lazygit", { width = 0.95, height = 0.95 })
+end, { noremap = true, silent = true })
+
+-- Detect which terminal was opened
+vim.api.nvim_create_autocmd("User", {
+  pattern = "FloatermOpen",
+  callback = function()
+    local name = vim.b.floaterm_name
+    if name == "term3" then
+      -- lazygit terminal: gold border
+      vim.cmd [[
+        highlight Floaterm guibg=NONE guifg=#c0caf5
+        highlight FloatermBorder guibg=NONE guifg=#e0af68
+      ]]
+    else
+      -- all other terminals: blue border
+      vim.cmd [[
+        highlight Floaterm guibg=NONE guifg=#c0caf5
+        highlight FloatermBorder guibg=NONE guifg=#7aa2f7
+      ]]
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "FloatermHide",
+  callback = function()
+    vim.cmd [[
+      highlight Floaterm guibg=NONE guifg=#c0caf5
+      highlight FloatermBorder guibg=NONE guifg=#7aa2f7
+    ]]
+  end,
+})
