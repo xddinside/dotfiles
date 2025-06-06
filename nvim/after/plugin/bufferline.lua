@@ -34,7 +34,7 @@ require('bufferline').setup {
     },
     color_icons = true,
     show_buffer_icons = true,
-    show_buffer_close_icons = true,
+    show_buffer_close_icons = false,
     show_close_icon = false,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
