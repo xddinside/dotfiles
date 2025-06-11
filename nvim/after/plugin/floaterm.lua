@@ -36,7 +36,7 @@ end, { noremap = true, silent = true })
 
 -- Regular terminal (term2)
 vim.keymap.set('n', '<leader>f2', function()
-  toggle_named_floaterm("term2", nil, { width = 0.95, height = 0.95 })
+  toggle_named_floaterm("term2", "yazi", { width = 0.95, height = 0.95 })
 end, { noremap = true, silent = true })
 
 -- Big terminal for lazygit (term3)

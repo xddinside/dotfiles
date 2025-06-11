@@ -32,7 +32,7 @@ set("n", "<leader>Q", ":qa<CR>")
 set("n", "<leader>w", ":w<CR>")
 
 -- exit out of insert mode with jj
-set("i", "jj", "")
+set("i", "jk", "")
 
 -- save and run js/ts code
 vim.api.nvim_set_keymap('n', '<leader>r', ':w<CR>:!node %<CR>', { noremap = true, silent = true })
