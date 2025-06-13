@@ -29,6 +29,9 @@ local function toggle_named_floaterm(name, cmd, opts)
   end
 end
 
+-- Run go run in a new terminal
+vim.keymap.set('n', '<leader>go', ':FloatermNew --autoclose=0 go run %<CR>')
+
 -- Big terminal (term1)
 vim.keymap.set('n', '<leader>f1', function()
   toggle_named_floaterm("term1", nil, { width = 0.6, height = 0.6 })

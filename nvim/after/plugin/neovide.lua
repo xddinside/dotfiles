@@ -1,7 +1,7 @@
 local is_neovide = vim.g.neovide or false
 
 if is_neovide then
-    vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+    vim.o.guifont = "JetBrainsMono Nerd Font:h16"
     vim.g.neovide_text_gamma = 0.0 -- default
     vim.g.neovide_text_contrast = 0.5 -- default
 
