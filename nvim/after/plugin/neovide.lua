@@ -8,7 +8,7 @@ if is_neovide then
     vim.g.neovide_opacity = 0.75
     vim.g.neovide_normal_opacity = 1
 
-    vim.g.neovide_scroll_animation_length = 0.1
+    vim.g.neovide_scroll_animation_length = 0.15
     vim.g.neovide_refresh_rate = 120
 
     vim.g.neovide_fullscreen = true
