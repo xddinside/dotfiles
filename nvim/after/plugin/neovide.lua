@@ -11,7 +11,7 @@ if is_neovide then
     vim.g.neovide_scroll_animation_length = 0.15
     vim.g.neovide_refresh_rate = 120
 
-    vim.g.neovide_fullscreen = true
+    vim.g.neovide_fullscreen = false
 
     vim.g.neovide_floating_blur_amount_y = 5.0
     vim.g.neovide_floating_blur_amount_x = 5.0
