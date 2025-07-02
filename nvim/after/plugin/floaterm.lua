@@ -24,8 +24,8 @@ local function toggle_named_floaterm(name, cmd, opts)
     vim.cmd(command)
 
     -- Reset to default size for other terminals
-    vim.g.floaterm_width  = 0.6
-    vim.g.floaterm_height = 0.6
+    vim.g.floaterm_width  = 0.8
+    vim.g.floaterm_height = 0.8
   end
 end
 
@@ -34,17 +34,17 @@ vim.keymap.set('n', '<leader>go', ':FloatermNew --autoclose=0 go run %<CR>')
 
 -- Big terminal (term1)
 vim.keymap.set('n', '<leader>f1', function()
-  toggle_named_floaterm("term1", nil, { width = 0.6, height = 0.6 })
+  toggle_named_floaterm("term1", nil, { width = 0.8, height = 0.8 })
 end, { noremap = true, silent = true })
 
 -- Regular terminal (term2)
 vim.keymap.set('n', '<leader>f2', function()
-  toggle_named_floaterm("term2", "yazi", { width = 0.95, height = 0.95 })
+  toggle_named_floaterm("term2", "yazi", { width = 0.90, height = 0.90 })
 end, { noremap = true, silent = true })
 
 -- Big terminal for lazygit (term3)
 vim.keymap.set('n', '<leader>f3', function()
-  toggle_named_floaterm("term3", "lazygit", { width = 0.95, height = 0.95 })
+  toggle_named_floaterm("term3", "lazygit", { width = 0.99, height = 0.99 })
 end, { noremap = true, silent = true })
 
 -- Detect which terminal was opened
