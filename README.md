@@ -2,7 +2,7 @@
 
 This repository contains the personal dotfiles for a development environment on Arch Linux. The primary focus is a highly customized Neovim configuration that is actively maintained and used daily.
 
-The current desktop environment, showcased in the screenshots below, utilizes [**Caelestia's Quickshell**](https://github.com/caelestia-dots/shell) for Hyprland, the [**ghostty**](https://ghostty.org/) terminal and [**Neovide**](https://neovide.dev/) for Neovim.
+The current desktop environment, showcased in the screenshots below, utilizes [**Caelestia's dotfiles**](https://github.com/caelestia-dots/shell) using [**quickshell**](https://quickshell.outfoxxed.me) for Hyprland, the [**ghostty**](https://ghostty.org/) terminal and [**Neovide**](https://neovide.dev/) for Neovim.
 
 <table align="center">
   <tr>
@@ -86,11 +86,11 @@ Keybindings are mapped for ergonomic and intuitive access. The leader key is set
 
 ### Hyprland Setup
 
-The Hyprland dotfiles included in this repository are archived from a previous setup based on [**HyDE's dotfiles**](https://github.com/HyDE-Project/HyDE). The current, active configuration uses [Caelestia dots](https://github.com/caelestia-dots/shell), which are based on [**Quickshell**](https://quickshell.outfoxxed.me/), and is not maintained in this repository. The old files are retained for archival purposes.
+The Hyprland dotfiles included in this repository are archived from a previous setup based on [**HyDE's dotfiles**](https://github.com/HyDE-Project/HyDE). The current, active configuration uses [**Caelestia dots**](https://github.com/caelestia-dots/shell), which are based on [**Quickshell**](https://quickshell.outfoxxed.me/), and is not maintained in this repository. The old files are retained for archival purposes.
 
 ### Terminal
 
-The primary terminal emulator is **ghostty**, chosen for its speed and simplicity. I use it barebones with very  minimal configuration, hence the absence of extensive dotfiles for it here.
+The primary terminal emulator is [**ghostty**](https://ghostty.org/), chosen for its speed and simplicity. I use it barebones with very  minimal configuration, hence the absence of extensive dotfiles for it here.
 
 ### Shell (Zsh)
 
