@@ -9,23 +9,25 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {
-    'sainnhe/sonokai',
-    priority = 1000,
-    as = 'sonokai',
-    config = function()
-      vim.g.sonokai_transparent_background = "1"
-      vim.g.sonokai_enable_italic = "1"
-      vim.g.sonaki_style = "andromeda"
-      vim.cmd('colorscheme sonokai')
-      vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
-    end,
-  }
+  -- use {
+  --   'sainnhe/sonokai',
+  --   priority = 1000,
+  --   as = 'sonokai',
+  --   config = function()
+  --     vim.g.sonokai_transparent_background = "1"
+  --     vim.g.sonokai_enable_italic = "1"
+  --     vim.g.sonaki_style = "andromeda"
+  --     vim.cmd('colorscheme sonokai')
+  --     vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+  --     vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
+  --   end,
+  -- }
+
+  use {'datsfilipe/vesper.nvim'}
+
   -- use {
   --   'rose-pine/neovim',
   --   as = 'rose-pine',
@@ -169,6 +171,19 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  }
+
+  use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  })
+
   use {"nvimdev/indentmini.nvim"}
 
   use { "kkharji/sqlite.lua" }
@@ -181,7 +196,17 @@ return require('packer').startup(function(use)
   use('folke/zen-mode.nvim')
   use('ThePrimeagen/vim-be-good')
   use('mattn/emmet-vim')
-  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = {'nvim-tree/nvim-web-devicons', 'datsfilipe/vesper.nvim'},
+    config = function ()
+     local bufferline = require('bufferline')
+      require('bufferline').setup({
+        highlights = require('vesper').bufferline.highlights,
+      })
+    end
+  }
   use {"Hashino/doing.nvim"}
   use {'voldikss/vim-floaterm'}
   use {'brenoprata10/nvim-highlight-colors'}

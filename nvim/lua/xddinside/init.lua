@@ -1,6 +1,7 @@
 require("xddinside.remap")
 require("xddinside.set")
 require("xddinside.lsp-config")
+vim.cmd.colorscheme('vesper')
 require("xddinside.packer")
 
 -- Specify the Python 3 interpreter path

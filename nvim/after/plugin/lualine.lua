@@ -113,14 +113,14 @@ require('lualine').setup {
 
 
   sections = {
-      lualine_a = {'mode'},
+    lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {{function() return require("doing").status() end}, show_macro},
 
---     lualine_c = {{function() return require("doing").status() end,
---     cond = function() return vim.g.doing_status_in_lualine end,},
---     show_macro
--- },
+    --     lualine_c = {{function() return require("doing").status() end,
+    --     cond = function() return vim.g.doing_status_in_lualine end,},
+    --     show_macro
+    -- },
     lualine_x = {{'filename', path = 1}},
     lualine_y = {},
     lualine_z = {}

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?/init.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1748459687/lib/lua/5.1/?.so"
+local package_path_str = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/home/xdd/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/xdd/.cache/nvim/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,13 +79,20 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0" },
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["autoclose.nvim"] = {
-    config = { "\27LJ\2\nØ\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disable_when_touch\2\23disabled_filetypes\0\nsetup\14autoclose\frequire\0" },
+    config = { "\27LJ\2\nØ\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disabled_filetypes\0\23disable_when_touch\2\nsetup\14autoclose\frequire\0" },
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
   ["bufferline.nvim"] = {
+    config = { "\27LJ\2\nÅ\1\0\0\a\0\6\0\0166\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\1\0B\1\2\0029\1\2\0015\3\5\0006\4\0\0'\6\3\0B\4\2\0029\4\1\0049\4\4\4=\4\4\3B\1\2\1K\0\1\0\1\0\1\15highlights\0\15highlights\vvesper\nsetup\15bufferline\frequire\0" },
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -121,7 +128,7 @@ _G.packer_plugins = {
   },
   ["godoc.nvim"] = {
     commands = { "GoDoc" },
-    config = { "\27LJ\2\nÑ\2\0\0\5\0\r\0\0226\0\0\0'\2\1\0B\0\2\0025\1\3\0005\2\2\0=\2\4\0015\2\5\0004\3\0\0=\3\6\0024\3\0\0=\3\a\0024\3\0\0=\3\b\0024\3\0\0=\3\t\0024\3\0\0=\3\n\2=\2\v\0019\2\f\0\18\4\1\0B\2\2\1K\0\1\0\nsetup\vpicker\ffzf_lua\tmini\vsnacks\14telescope\vnative\1\0\6\vsnacks\0\ttype\14telescope\tmini\0\vnative\0\ffzf_lua\0\14telescope\0\vwindow\1\0\2\vwindow\0\vpicker\0\1\0\1\ttype\vvsplit\ngodoc\frequire\0" },
+    config = { "\27LJ\2\nÑ\2\0\0\5\0\r\0\0226\0\0\0'\2\1\0B\0\2\0025\1\3\0005\2\2\0=\2\4\0015\2\5\0004\3\0\0=\3\6\0024\3\0\0=\3\a\0024\3\0\0=\3\b\0024\3\0\0=\3\t\0024\3\0\0=\3\n\2=\2\v\0019\2\f\0\18\4\1\0B\2\2\1K\0\1\0\nsetup\vpicker\ffzf_lua\tmini\vsnacks\14telescope\vnative\1\0\6\14telescope\0\ffzf_lua\0\vnative\0\ttype\14telescope\tmini\0\vsnacks\0\vwindow\1\0\2\vpicker\0\vwindow\0\1\0\1\ttype\vvsplit\ngodoc\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -220,6 +227,13 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-textobjects"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
@@ -264,12 +278,6 @@ _G.packer_plugins = {
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/smart-open.nvim",
     url = "https://github.com/danielfalk/smart-open.nvim"
   },
-  sonokai = {
-    config = { "\27LJ\2\n≠\2\0\0\5\0\15\0\0316\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\3\0=\1\4\0006\0\0\0009\0\1\0'\1\6\0=\1\5\0006\0\0\0009\0\a\0'\2\b\0B\0\2\0016\0\0\0009\0\t\0009\0\n\0)\2\0\0'\3\v\0005\4\f\0B\0\4\0016\0\0\0009\0\t\0009\0\n\0)\2\0\0'\3\r\0005\4\14\0B\0\4\1K\0\1\0\1\0\1\abg\tNONE\17StatusLineNC\1\0\1\abg\tNONE\15StatusLine\16nvim_set_hl\bapi\24colorscheme sonokai\bcmd\14andromeda\17sonaki_style\26sonokai_enable_italic\0061#sonokai_transparent_background\6g\bvim\0" },
-    loaded = true,
-    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/sonokai",
-    url = "https://github.com/sainnhe/sonokai"
-  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/sqlite.lua",
@@ -284,6 +292,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/xdd/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vesper.nvim"] = {
+    loaded = true,
+    path = "/home/xdd/.local/share/nvim/site/pack/packer/start/vesper.nvim",
+    url = "https://github.com/datsfilipe/vesper.nvim"
   },
   ["vim-be-good"] = {
     loaded = true,
@@ -308,26 +321,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: inc-rename.nvim
-time([[Config for inc-rename.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
-time([[Config for inc-rename.nvim]], false)
--- Config for: sonokai
-time([[Config for sonokai]], true)
-try_loadstring("\27LJ\2\n≠\2\0\0\5\0\15\0\0316\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\3\0=\1\4\0006\0\0\0009\0\1\0'\1\6\0=\1\5\0006\0\0\0009\0\a\0'\2\b\0B\0\2\0016\0\0\0009\0\t\0009\0\n\0)\2\0\0'\3\v\0005\4\f\0B\0\4\0016\0\0\0009\0\t\0009\0\n\0)\2\0\0'\3\r\0005\4\14\0B\0\4\1K\0\1\0\1\0\1\abg\tNONE\17StatusLineNC\1\0\1\abg\tNONE\15StatusLine\16nvim_set_hl\bapi\24colorscheme sonokai\bcmd\14andromeda\17sonaki_style\26sonokai_enable_italic\0061#sonokai_transparent_background\6g\bvim\0", "config", "sonokai")
-time([[Config for sonokai]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: nvim-notify
 time([[Config for nvim-notify]], true)
 try_loadstring("\27LJ\2\nT\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vstages\vstatic\ftimeout\3–\15\nsetup\vnotify\frequire\0", "config", "nvim-notify")
 time([[Config for nvim-notify]], false)
 -- Config for: autoclose.nvim
 time([[Config for autoclose.nvim]], true)
-try_loadstring("\27LJ\2\nØ\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disable_when_touch\2\23disabled_filetypes\0\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
+try_loadstring("\27LJ\2\nØ\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\23disabled_filetypes\1\3\0\0\ttext\rmarkdown\1\0\2\23disabled_filetypes\0\23disable_when_touch\2\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
 time([[Config for autoclose.nvim]], false)
+-- Config for: inc-rename.nvim
+time([[Config for inc-rename.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
+time([[Config for inc-rename.nvim]], false)
 -- Config for: smart-open.nvim
 time([[Config for smart-open.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\15smart_open\19load_extension\14telescope\frequire\0", "config", "smart-open.nvim")
 time([[Config for smart-open.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\nÅ\1\0\0\a\0\6\0\0166\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\1\0B\1\2\0029\1\2\0015\3\5\0006\4\0\0'\6\3\0B\4\2\0029\4\1\0049\4\4\4=\4\4\3B\1\2\1K\0\1\0\1\0\1\15highlights\0\15highlights\vvesper\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
@@ -336,23 +353,24 @@ vim.cmd [[ packadd render-markdown.nvim ]]
 -- Config for: render-markdown.nvim
 try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20render-markdown\frequire\0", "config", "render-markdown.nvim")
 
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'Colortils', function(cmdargs)
-          require('packer.load')({'colortils.nvim'}, { cmd = 'Colortils', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'colortils.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Colortils ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'GoDoc', function(cmdargs)
           require('packer.load')({'godoc.nvim'}, { cmd = 'GoDoc', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'godoc.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('GoDoc ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Colortils', function(cmdargs)
+          require('packer.load')({'colortils.nvim'}, { cmd = 'Colortils', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'colortils.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Colortils ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

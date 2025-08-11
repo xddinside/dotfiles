@@ -61,28 +61,52 @@ require('bufferline').setup {
     sort_by = 'insert_at_end',
   },
 
-  highlights = {
-    fill = { bg = "#000000" },
-    background = { bg = "#000000", fg = "#7aa2f7" },         -- Andromeda blue
-    buffer_visible = { bg = "#000000", fg = "#7aa2f7" },
-    buffer_selected = { bg = "#1a1b26", fg = "#e0af68", bold = true, italic = false }, -- Andromeda yellow
-    tab = { bg = "#000000", fg = "#7aa2f7" },
-    tab_selected = { bg = "#1a1b26", fg = "#e0af68", bold = true },
-    tab_close = { bg = "#000000", fg = "#ff9e64" },          -- Andromeda orange
-    separator = { bg = "#000000", fg = "#283457" },          -- Andromeda dark blue
-    separator_visible = { bg = "#000000", fg = "#283457" },
-    separator_selected = { bg = "#1a1b26", fg = "#283457" },
-    close_button = { bg = "#000000", fg = "#ff9e64" },
-    close_button_selected = { bg = "#1a1b26", fg = "#ff9e64" },
-    close_button_visible = { bg = "#000000", fg = "#ff9e64" },
-    modified = { bg = "#000000", fg = "#9ece6a" },           -- Andromeda green
-    modified_selected = { bg = "#1a1b26", fg = "#9ece6a" },
-    modified_visible = { bg = "#000000", fg = "#9ece6a" },
-    indicator_selected = { bg = "#1a1b26", fg = "#bb9af7" }, -- Andromeda purple
-    numbers = {bg = "#000000"},
-    numbers_selected = {bg = "#1a1b26"},
-    numbers_visible = {bg = "#000000"},
-  }
+  -- highlights = {
+  -- vesper colors
+  -- fill = { bg = "#000000" }, -- Midnight
+  -- background = { bg = "#000000", fg = "#82D9C2" }, -- Coastal
+  -- buffer_visible = { bg = "#000000", fg = "#82D9C2" },
+  -- buffer_selected = { bg = "#2E2E2E", fg = "#82D9C2", bold = true, italic = false }, -- Violet and Coastal
+  -- tab = { bg = "#000000", fg = "#82D9C2" },
+  -- tab_selected = { bg = "#2E2E2E", fg = "#82D9C2", bold = true },
+  -- tab_close = { bg = "#000000", fg = "#d4405b" }, -- Coral
+  -- separator = { bg = "#000000", fg = "#5e5fa1" }, -- Violet
+  -- separator_visible = { bg = "#000000", fg = "#5e5fa1" },
+  -- separator_selected = { bg = "#2E2E2E", fg = "#5e5fa1" },
+  -- close_button = { bg = "#000000", fg = "#d4405b" },
+  -- close_button_selected = { bg = "#2E2E2E", fg = "#d4405b" },
+  -- close_button_visible = { bg = "#000000", fg = "#d4405b" },
+  -- modified = { bg = "#000000", fg = "#a5a6c0" }, -- Summer
+  -- modified_selected = { bg = "#2E2E2E", fg = "#a5a6c0" },
+  -- modified_visible = { bg = "#000000", fg = "#a5a6c0" },
+  -- indicator_selected = { bg = "#2E2E2E", fg = "#82D9C2" },
+  -- numbers = {bg = "#000000"},
+  -- numbers_selected = {bg = "#2E2E2E"},
+  -- numbers_visible = {bg = "#000000"},
+
+  -- sonokai andromeda colors
+  -- fill = { bg = "#000000" },
+  -- background = { bg = "#000000", fg = "#7aa2f7" },         -- Andromeda blue
+  -- buffer_visible = { bg = "#000000", fg = "#7aa2f7" },
+  -- buffer_selected = { bg = "#1a1b26", fg = "#e0af68", bold = true, italic = false }, -- Andromeda yellow
+  -- tab = { bg = "#000000", fg = "#7aa2f7" },
+  -- tab_selected = { bg = "#1a1b26", fg = "#e0af68", bold = true },
+  -- tab_close = { bg = "#000000", fg = "#ff9e64" },          -- Andromeda orange
+  -- separator = { bg = "#000000", fg = "#283457" },          -- Andromeda dark blue
+  -- separator_visible = { bg = "#000000", fg = "#283457" },
+  -- separator_selected = { bg = "#1a1b26", fg = "#283457" },
+  -- close_button = { bg = "#000000", fg = "#ff9e64" },
+  -- close_button_selected = { bg = "#1a1b26", fg = "#ff9e64" },
+  -- close_button_visible = { bg = "#000000", fg = "#ff9e64" },
+  -- modified = { bg = "#000000", fg = "#9ece6a" },           -- Andromeda green
+  -- modified_selected = { bg = "#1a1b26", fg = "#9ece6a" },
+  -- modified_visible = { bg = "#000000", fg = "#9ece6a" },
+  -- indicator_selected = { bg = "#1a1b26", fg = "#bb9af7" }, -- Andromeda purple
+  -- numbers = {bg = "#000000"},
+  -- numbers_selected = {bg = "#1a1b26"},
+  -- numbers_visible = {bg = "#000000"},
+
+  -- }
 }
 
 -- highlights = {

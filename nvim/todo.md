@@ -8,7 +8,7 @@
 
 - [x] 4. setup doing.nvim (can integrate in lualine statusline)
 
-- [ ] 5. setup alpha.nvim for neovim splash screen with ascii art
+- [x] 5. setup alpha.nvim for neovim splash screen with ascii art
 
 - [ ] 6. setup nvim-treesitter-textobjects
 
