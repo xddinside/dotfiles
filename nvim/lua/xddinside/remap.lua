@@ -12,9 +12,14 @@ set({"n", "x"}, "s", '"_s', {silent = true})
 
 set("n", "<leader>gd", ":GoDoc<CR>", { noremap = true, silent = true })
 
-set('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
+ set('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
 
-set("v", "J", ":m '>+1<CR>gv=gv")
+ -- Theme switcher
+ set('n', '<leader>th', function()
+   require('xddinside.theme-switcher').pick_theme()
+ end, { desc = 'Switch theme' })
+
+ set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")
 
 set("n", "<C-d>", "<C-d>zz")

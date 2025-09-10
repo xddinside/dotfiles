@@ -1,20 +1,21 @@
-function ColorMyPencils(color)
-  -- color = color or "catppuccin-mocha"
-  -- color = color or "sonokai"
-  color = color or "vesper"
-  vim.cmd.colorscheme(color)
+ local theme_switcher = require('xddinside.theme-switcher')
 
-  vim.api.nvim_set_hl(0, "Normal",{ bg = "none"})
-  vim.api.nvim_set_hl(0, "NormalFloat",{ bg = "none"})
+ function ColorMyPencils(color)
+   -- Load saved theme or use default
+   color = color or theme_switcher.load_saved_theme()
+   vim.cmd.colorscheme(color)
 
-  -- Ensure transparent background on fullscreen toggle
-  vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    callback = function()
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    end,
-  })
-end
+   vim.api.nvim_set_hl(0, "Normal",{ bg = "none"})
+   vim.api.nvim_set_hl(0, "NormalFloat",{ bg = "none"})
 
-ColorMyPencils()
+   -- Ensure transparent background on fullscreen toggle
+   vim.api.nvim_create_autocmd("VimEnter", {
+     pattern = "*",
+     callback = function()
+       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+     end,
+   })
+ end
+
+ ColorMyPencils()

@@ -12,37 +12,50 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  -- use {
-  --   'sainnhe/sonokai',
-  --   priority = 1000,
-  --   as = 'sonokai',
-  --   config = function()
-  --     vim.g.sonokai_transparent_background = "1"
-  --     vim.g.sonokai_enable_italic = "1"
-  --     vim.g.sonaki_style = "andromeda"
-  --     vim.cmd('colorscheme sonokai')
-  --     vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
-  --     vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
-  --   end,
-  -- }
+   use {
+     'sainnhe/sonokai',
+     priority = 1000,
+     as = 'sonokai',
+     config = function()
+       vim.g.sonokai_transparent_background = "1"
+       vim.g.sonokai_enable_italic = "1"
+       vim.g.sonokai_style = "andromeda"
+     end,
+   }
 
-  use {'datsfilipe/vesper.nvim'}
+   use {'datsfilipe/vesper.nvim'}
 
-  -- use {
-  --   'rose-pine/neovim',
-  --   as = 'rose-pine',
-  --   config = function()
-  --     vim.cmd('colorscheme rose-pine')  -- Set the colorscheme to rose-pine
-  --   end
-  -- }
+   use {
+     'rose-pine/neovim',
+     as = 'rose-pine',
+     config = function()
+       require('rose-pine').setup({
+         disable_background = true,
+       })
+     end
+   }
 
-  --	use({
-  --		'catppuccin/nvim',
-  --		as = 'catppuccin',
-  --		config = function()
-  --			vim.cmd('colorscheme catppuccin-mocha') -- Set the colorscheme to catppuccin
-  --		end
-  --	})
+   use({
+     'catppuccin/nvim',
+     as = 'catppuccin',
+     config = function()
+       require('catppuccin').setup({
+         transparent_background = true,
+       })
+     end
+   })
+
+   use {
+     'shaunsingh/nord.nvim',
+     config = function()
+       vim.g.nord_contrast = true
+       vim.g.nord_borders = false
+       vim.g.nord_disable_background = true
+       vim.g.nord_italic = false
+       vim.g.nord_uniform_diff_background = true
+       vim.g.nord_bold = false
+     end
+   }
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -196,17 +209,11 @@ return require('packer').startup(function(use)
   use('folke/zen-mode.nvim')
   use('ThePrimeagen/vim-be-good')
   use('mattn/emmet-vim')
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "*",
-    requires = {'nvim-tree/nvim-web-devicons', 'datsfilipe/vesper.nvim'},
-    config = function ()
-     local bufferline = require('bufferline')
-      require('bufferline').setup({
-        highlights = require('vesper').bufferline.highlights,
-      })
-    end
-  }
+   use {
+     'akinsho/bufferline.nvim',
+     tag = "*",
+     requires = {'nvim-tree/nvim-web-devicons'}
+   }
   use {"Hashino/doing.nvim"}
   use {'voldikss/vim-floaterm'}
   use {'brenoprata10/nvim-highlight-colors'}
