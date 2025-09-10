@@ -1,7 +1,12 @@
 require("xddinside.remap")
 require("xddinside.set")
 require("xddinside.lsp-config")
-vim.cmd.colorscheme('vesper')
+
+-- Load saved theme with proper integrations
+local theme_switcher = require('xddinside.theme-switcher')
+local saved_theme = theme_switcher.load_saved_theme()
+theme_switcher.apply_theme(saved_theme)
+
 require("xddinside.packer")
 
 -- Specify the Python 3 interpreter path

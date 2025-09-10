@@ -57,33 +57,5 @@ vim.keymap.set('n', '<leader>f3', function()
   toggle_named_floaterm("term3", "lazygit", { width = 0.99, height = 0.99, cwd = vim.fn.expand('%:p:h') })
 end, { noremap = true, silent = true })
 
--- Detect which terminal was opened
-vim.api.nvim_create_autocmd("User", {
-  pattern = "FloatermOpen",
-  callback = function()
-    local name = vim.b.floaterm_name
-    if name == "term3" then
-      -- lazygit terminal: gold border
-      vim.cmd [[
-        highlight Floaterm guibg=NONE guifg=#c0caf5
-        highlight FloatermBorder guibg=NONE guifg=#e0af68
-      ]]
-    else
-      -- all other terminals: blue border
-      vim.cmd [[
-        highlight Floaterm guibg=NONE guifg=#c0caf5
-        highlight FloatermBorder guibg=NONE guifg=#7aa2f7
-      ]]
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "FloatermHide",
-  callback = function()
-    vim.cmd [[
-      highlight Floaterm guibg=NONE guifg=#c0caf5
-      highlight FloatermBorder guibg=NONE guifg=#7aa2f7
-    ]]
-  end,
-})
+-- Floaterm colors are now handled by theme integrations
+-- The autocmds are set up in the theme-integrations.lua file

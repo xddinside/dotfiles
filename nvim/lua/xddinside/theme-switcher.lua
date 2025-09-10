@@ -40,11 +40,81 @@ function M.apply_theme(theme_name)
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
+  -- Apply theme integrations (bufferline, lualine, floaterm)
+  local integrations = require('xddinside.theme-integrations')
+  integrations.apply_theme_integrations(theme_name)
+
   -- Save the theme
   M.save_theme(theme_name)
 
-  -- Notify user
-  vim.notify('Theme switched to: ' .. theme_name, vim.log.levels.INFO)
+  -- Force a complete redraw to ensure all UI elements update
+  vim.defer_fn(function()
+    vim.cmd('redraw!')
+    vim.cmd('redrawtabline')
+    vim.cmd('redrawstatus!')
+
+    -- Force lualine to refresh all sections
+    if pcall(require, 'lualine') then
+      require('lualine').refresh()
+    end
+
+    -- Ensure lualine section c stays transparent
+    vim.api.nvim_set_hl(0, "lualine_c_normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "lualine_c_insert", { bg = "none" })
+    vim.api.nvim_set_hl(0, "lualine_c_visual", { bg = "none" })
+    vim.api.nvim_set_hl(0, "lualine_c_replace", { bg = "none" })
+    vim.api.nvim_set_hl(0, "lualine_c_command", { bg = "none" })
+    vim.api.nvim_set_hl(0, "lualine_c_inactive", { bg = "none" })
+  end, 100)
+
+   -- Debug: Check if transparency is applied
+   vim.defer_fn(function()
+     local hl = vim.api.nvim_get_hl(0, { name = "lualine_c_normal" })
+     vim.notify('lualine_c_normal bg: ' .. (hl.bg or "nil"), vim.log.levels.INFO)
+
+     -- Force transparency one more time
+     vim.api.nvim_set_hl(0, "lualine_c_normal", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_insert", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_visual", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_replace", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_command", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_inactive", { bg = "none" })
+
+     -- Force bufferline redraw
+     vim.cmd('redrawtabline')
+   end, 500)
+
+   -- Add commands to manually refresh transparency and check status
+   vim.api.nvim_create_user_command('RefreshTransparency', function()
+     -- Apply lualine transparency
+     vim.api.nvim_set_hl(0, "lualine_c_normal", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_insert", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_visual", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_replace", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_command", { bg = "none" })
+     vim.api.nvim_set_hl(0, "lualine_c_inactive", { bg = "none" })
+
+     -- Force bufferline redraw
+     vim.cmd('redrawtabline')
+
+     -- Force lualine refresh
+     if pcall(require, 'lualine') then
+       require('lualine').refresh()
+     end
+
+     vim.notify('Transparency refreshed', vim.log.levels.INFO)
+   end, {})
+
+   vim.api.nvim_create_user_command('CheckTransparency', function()
+     local hl = vim.api.nvim_get_hl(0, { name = "lualine_c_normal" })
+     vim.notify('lualine_c_normal bg: ' .. (hl.bg or "nil"), vim.log.levels.INFO)
+
+     hl = vim.api.nvim_get_hl(0, { name = "BufferLineBufferSelected" })
+     vim.notify('BufferLineBufferSelected bg: ' .. (hl.bg or "nil"), vim.log.levels.INFO)
+   end, {})
+
+   -- Notify user
+   vim.notify('Theme switched to: ' .. theme_name, vim.log.levels.INFO)
 end
 
 -- Telescope theme picker
