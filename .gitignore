@@ -1,3 +1,5 @@
 .tasks
 
+current_theme.txt
+
 packer_compiled.lua
