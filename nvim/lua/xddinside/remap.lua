@@ -1,23 +1,17 @@
 vim.g.mapleader = " "
 local set = vim.keymap.set
+
+-- Netrw
 set("n", "<leader>pv", vim.cmd.Ex)
-set('n', '<leader>pt', ':Telescope smart_open<CR>', { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>n", ":Neotree toggle<CR>", { noremap = true, silent = true })
-set("n", "<leader>rn", ":IncRename ")
--- noice: to move to the message, press <C-w>w : jump to notification popup, built in neovim
+
+-- Theme switcher
+set('n', '<leader>th', function()
+  require('xddinside.theme-switcher').pick_theme()
+end, { desc = 'Switch theme' })
 
 -- stop saving to neovim clipboard with x and s (used to cut a char)
 set({"n", "x"}, "x", '"_x', {silent = true})
 set({"n", "x"}, "s", '"_s', {silent = true})
-
-set("n", "<leader>gd", ":GoDoc<CR>", { noremap = true, silent = true })
-
- set('n', '<leader>md', ':MarkdownPreviewToggle<CR>')
-
- -- Theme switcher
- set('n', '<leader>th', function()
-   require('xddinside.theme-switcher').pick_theme()
- end, { desc = 'Switch theme' })
 
  set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")

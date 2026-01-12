@@ -1,2 +1,0 @@
--- Configuration moved to lua/xddinside/theme-switcher.lua
--- This file is intentionally left minimal to avoid conflicting setups.
