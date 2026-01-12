@@ -44,12 +44,12 @@ end, { noremap = true, silent = true })
 
 -- Big terminal (term1)
 vim.keymap.set('n', '<leader>f1', function()
-  toggle_named_floaterm("term1", nil, { width = 0.8, height = 0.8 })
+  toggle_named_floaterm("term1", nil, { width = 0.65, height = 0.6 })
 end, { noremap = true, silent = true })
 
 -- Regular terminal (term2)
 vim.keymap.set('n', '<leader>f2', function()
-  toggle_named_floaterm("term2", "yazi", { width = 0.90, height = 0.90 })
+  toggle_named_floaterm("term2", nil, { width = 0.85, height = 0.80 })
 end, { noremap = true, silent = true })
 
 -- Big terminal for lazygit (term3)

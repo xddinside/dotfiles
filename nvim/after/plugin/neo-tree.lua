@@ -14,10 +14,12 @@ if is_neovide then
         hide_by_name = {
           "node_modules",
           ".git",
+          ".next",
         },
         never_show = {
           "node_modules",
           ".git",
+          ".next",
         },
       },
       follow_current_file = { enabled = true }, -- Auto-focus current file in the tree

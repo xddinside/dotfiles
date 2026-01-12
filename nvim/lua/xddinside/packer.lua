@@ -12,50 +12,61 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-   use {
-     'sainnhe/sonokai',
-     priority = 1000,
-     as = 'sonokai',
-     config = function()
-       vim.g.sonokai_transparent_background = "1"
-       vim.g.sonokai_enable_italic = "1"
-       vim.g.sonokai_style = "andromeda"
-     end,
-   }
+  use {
+    'sainnhe/sonokai',
+    priority = 1000,
+    as = 'sonokai',
+    config = function()
+      vim.g.sonokai_transparent_background = "1"
+      vim.g.sonokai_enable_italic = "1"
+      vim.g.sonokai_style = "andromeda"
+    end,
+  }
 
-   use {'datsfilipe/vesper.nvim'}
+  use {'datsfilipe/vesper.nvim'}
 
-   use {
-     'rose-pine/neovim',
-     as = 'rose-pine',
-     config = function()
-       require('rose-pine').setup({
-         disable_background = true,
-       })
-     end
-   }
+  use {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      require('rose-pine').setup({
+        disable_background = true,
+      })
+    end
+  }
 
-   use({
-     'catppuccin/nvim',
-     as = 'catppuccin',
-     config = function()
-       require('catppuccin').setup({
-         transparent_background = true,
-       })
-     end
-   })
+  use({
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = function()
+      require('catppuccin').setup({
+        transparent_background = true,
+      })
+    end
+  })
 
-   use {
-     'shaunsingh/nord.nvim',
-     config = function()
-       vim.g.nord_contrast = true
-       vim.g.nord_borders = false
-       vim.g.nord_disable_background = true
-       vim.g.nord_italic = false
-       vim.g.nord_uniform_diff_background = true
-       vim.g.nord_bold = false
-     end
-   }
+  use {
+    'shaunsingh/nord.nvim',
+    config = function()
+      vim.g.nord_contrast = true
+      vim.g.nord_borders = false
+      vim.g.nord_disable_background = true
+      vim.g.nord_italic = false
+      vim.g.nord_uniform_diff_background = true
+      vim.g.nord_bold = false
+    end
+  }
+
+  use {
+    'Shobhit-Nagpal/chai.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' },
+    config = function()
+      require('chai').setup({
+        transparent_background = true,
+        comment_italics = true,
+      })
+    end
+  }
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -209,11 +220,11 @@ return require('packer').startup(function(use)
   use('folke/zen-mode.nvim')
   use('ThePrimeagen/vim-be-good')
   use('mattn/emmet-vim')
-   use {
-     'akinsho/bufferline.nvim',
-     tag = "*",
-     requires = {'nvim-tree/nvim-web-devicons'}
-   }
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
   use {"Hashino/doing.nvim"}
   use {'voldikss/vim-floaterm'}
   use {'brenoprata10/nvim-highlight-colors'}
@@ -225,6 +236,8 @@ return require('packer').startup(function(use)
   use ('hrsh7th/nvim-cmp') -- Autocompletion plugin
   use ('hrsh7th/cmp-nvim-lsp') -- LSP source for nvim-cmp
   use ('L3MON4D3/LuaSnip') -- Snippets plugin
+  use ('rafamadriz/friendly-snippets') -- VS Code style snippets
+  use ('saadparwaiz1/cmp_luasnip') -- nvim-cmp source for LuaSnip
   use ('hrsh7th/cmp-cmdline')  -- Command line completion 
 
   -- Optional UI improvements
