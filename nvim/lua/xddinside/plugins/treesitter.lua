@@ -1,7 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
       local ok, configs = pcall(require, "nvim-treesitter.configs")

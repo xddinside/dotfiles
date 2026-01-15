@@ -10,9 +10,9 @@ return {
   {
     "Hashino/doing.nvim",
     keys = {
-      { "<leader>da", function() require("doing").add() end, desc = "[D]oing: [A]dd" },
-      { "<leader>de", function() require("doing").edit() end, desc = "[D]oing: [E]dit" },
-      { "<leader>dn", function() require("doing").done() end, desc = "[D]oing: Do[n]e" },
+      { "<leader>da", function() require("doing").add() end,    desc = "[D]oing: [A]dd" },
+      { "<leader>de", function() require("doing").edit() end,   desc = "[D]oing: [E]dit" },
+      { "<leader>dn", function() require("doing").done() end,   desc = "[D]oing: Do[n]e" },
       { "<leader>dt", function() require("doing").toggle() end, desc = "[D]oing: [T]oggle" },
       {
         "<leader>ds",
@@ -80,6 +80,49 @@ return {
           telescope = {},
         },
       })
+    end,
+  },
+
+  -- NOTE: 99 plugin pinned to commit 91ea4cf due to local patches in
+  -- ~/.local/share/nvim/lazy/99/ (languages option support, JS/TSX modules, queries).
+  -- Unpinning will overwrite patches. See: https://github.com/ThePrimeagen/99/issues/XXX
+  {
+    "ThePrimeagen/99",
+    commit = "91ea4cfd4a46d756152e9470abe495f4b178e818",
+    config = function()
+      local _99 = require("99")
+      local cwd = vim.uv.cwd()
+      local basename = vim.fs.basename(cwd)
+
+      _99.setup({
+        model = "google/gemini-3-flash-preview",
+        languages = { "lua", "typescript", "typescriptreact", "javascript", "go" },
+        display_errors = true,
+        logger = {
+          level = _99.DEBUG,
+          path = "/tmp/" .. basename .. ".99.debug",
+          print_on_error = true,
+        },
+        md_files = {
+          "AGENT.md",
+        },
+      })
+
+      vim.keymap.set("n", "<leader>9i", function()
+        _99.info()
+      end, { desc = "99: Show info" })
+
+      vim.keymap.set("n", "<leader>9f", function()
+        _99.fill_in_function()
+      end, { desc = "99: Fill in function" })
+
+      vim.keymap.set("v", "<leader>9v", function()
+        _99.visual()
+      end, { desc = "99: Visual selection" })
+
+      vim.keymap.set("v", "<leader>9s", function()
+        _99.stop_all_requests()
+      end, { desc = "99: Stop requests" })
     end,
   },
 }
